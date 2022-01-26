@@ -1,0 +1,33 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Category index{% endblock %}
+
+{% block body %}
+    
+
+    <div class="container py-5">
+
+        <div class="row">
+
+        <div class="col-12 d-flex align-items-center justify-content-between">
+            <h3> Liste des catégories</h3>
+            <a class="btn-primary" href="{{ path('admin_category_new') }}"> Ajouter </a>
+            </div>
+
+            {% for category in categories %}
+
+                <div class="col-sm-12 col-md-6 col-lg-4"></div>
+
+                <div class="card" >
+                    <img class="card-img-top imageCard" src="{{ category.imagePath }}" alt="image_category">
+                         <div class="card-body">
+                         <h5 class="card-title">{{
+                             category.name
+                         }}</h5>
+                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary w-100">Go somewhere</a>
+                 </div>
+                </div>
+
+            {% endfor %}
+{% endblock %}
